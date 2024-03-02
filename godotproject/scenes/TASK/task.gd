@@ -19,16 +19,7 @@ func changeTaskName(newName : String):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	for otherTask in nearbyTasks:
+	for otherTask in $Area2D.get_overlapping_areas():
 		var diffVector = (self.position - otherTask.position)
 		diffVector = diffVector.normalized() * max(0, diffVector.length() - maxDistanceForPush)
 		self.apply_central_force(diffVector * distanceToForceBaseMultiplier)
-
-
-func _on_area_2d_area_entered(area):
-	if (area.parent != self):
-		nearbyTasks.update[area.parent] = null
-
-
-func _on_area_2d_area_exited(area):
-	nearbyTasks.erase(area.parent)
