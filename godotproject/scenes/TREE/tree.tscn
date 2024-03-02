@@ -1,12 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://i8328df2j2rb"]
+[gd_scene format=3 uid="uid://i8328df2j2rb"]
 
-[ext_resource type="Texture2D" uid="uid://cy68a3ddd8ymp" path="res://resources/square_rounded.png" id="1_7keig"]
-
-[node name="Tree" type="CanvasLayer"]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.435294, 0.592157, 0.572549, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasModulate"]
-scale = Vector2(2.2832, 2.43945)
-texture = ExtResource("1_7keig")
+[node name="Node2D" type="Node2D"]
