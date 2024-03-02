@@ -4,7 +4,10 @@ class_name Task
 @export var children: Array = []
 @export var parent: Task
 @export var taskname: String = "TextName"
-@export var nearbyTasks: Array = []
+@export var nearbyTasks: Dictionary = {}
+
+@export var maxDistanceForPush: int = 5
+@export var distanceToForceBaseMultiplier: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,14 +18,17 @@ func changeTaskName(newName : String):
 	taskname = newName
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
+	for otherTask in nearbyTasks:
+		var diffVector = (self.position - otherTask.position)
+		diffVector = diffVector.normalized() * max(0, diffVector.length() - maxDistanceForPush)
+		self.apply_central_force(diffVector * distanceToForceBaseMultiplier)
 
 
 func _on_area_2d_area_entered(area):
 	if (area.parent != self):
-		nearbyTasks.append(area.parent)
+		nearbyTasks.update[area.parent] = null
 
 
 func _on_area_2d_area_exited(area):
-	pass # Replace with function body.
+	nearbyTasks.erase(area.parent)
