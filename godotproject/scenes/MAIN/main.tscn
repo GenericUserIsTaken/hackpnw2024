@@ -1,24 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3jig6ur2qlqn"]
 
-[ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task.tscn" id="1_bd0f7"]
+[ext_resource type="PackedScene" uid="uid://i8328df2j2rb" path="res://scenes/TREE/tree.tscn" id="1_70260"]
 
-[node name="HSplitContainer" type="HSplitContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-split_offset = 960
+[node name="Main" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 2
-color = Color(0.945098, 0.309804, 0.407843, 1)
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
-layout_mode = 2
-
-[node name="ColorRect2" type="ColorRect" parent="HSplitContainer"]
-layout_mode = 2
-color = Color(0.333333, 0.67451, 0.282353, 1)
-
-[node name="Task" parent="HSplitContainer" instance=ExtResource("1_bd0f7")]
+[node name="Tree" parent="." instance=ExtResource("1_70260")]
