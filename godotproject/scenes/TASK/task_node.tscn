@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://oil23nrqorjg"]
+[gd_scene load_steps=6 format=3 uid="uid://bemfosvxxd6d8"]
 
 [ext_resource type="Script" path="res://scenes/TASK/task.gd" id="1_1yd7e"]
 [ext_resource type="Texture2D" uid="uid://cy68a3ddd8ymp" path="res://resources/square_rounded.png" id="1_c6lgs"]
-[ext_resource type="PackedScene" uid="uid://c5a1jh8gbd50t" path="res://scenes/TREE/TaskTracer.tscn" id="3_dhgkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rvya"]
 radius = 500.0
 
 [sub_resource type="SystemFont" id="SystemFont_bshqn"]
+subpixel_positioning = 0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
 
@@ -26,8 +26,6 @@ texture = ExtResource("1_c6lgs")
 [node name="NearbyCollider" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_3rvya")
 
-[node name="TaskTracer" parent="." instance=ExtResource("3_dhgkg")]
-
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,3 +43,9 @@ text = "task name"
 
 [node name="SelfCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_y05yv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
