@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://oil23nrqorjg"]
+[gd_scene load_steps=7 format=3 uid="uid://oil23nrqorjg"]
 
 [ext_resource type="Script" path="res://scenes/TASK/task.gd" id="1_1yd7e"]
 [ext_resource type="Texture2D" uid="uid://cy68a3ddd8ymp" path="res://resources/square_rounded.png" id="1_c6lgs"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rvya"]
 radius = 250.0
+
+[sub_resource type="SystemFont" id="SystemFont_bshqn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
 
@@ -25,16 +27,17 @@ shape = SubResource("CircleShape2D_3rvya")
 [node name="TaskTracer" parent="." instance=ExtResource("3_dhgkg")]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-offset_left = -232.0
-offset_top = -204.0
-offset_right = 252.0
-offset_bottom = 226.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = SubResource("SystemFont_bshqn")
 text = "task name"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
