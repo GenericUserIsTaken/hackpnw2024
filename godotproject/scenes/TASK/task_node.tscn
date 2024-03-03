@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bemfosvxxd6d8"]
+[gd_scene load_steps=7 format=3 uid="uid://bemfosvxxd6d8"]
 
 [ext_resource type="Script" path="res://scenes/TASK/task.gd" id="1_1yd7e"]
 [ext_resource type="Texture2D" uid="uid://cy68a3ddd8ymp" path="res://resources/square_rounded.png" id="1_c6lgs"]
+[ext_resource type="PackedScene" uid="uid://l3gt715yj5sj" path="res://text_edit.tscn" id="3_4youe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
+radius = 31.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rvya"]
 radius = 500.0
 
 [sub_resource type="SystemFont" id="SystemFont_bshqn"]
 subpixel_positioning = 0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
 
 [node name="TaskNode" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -20,6 +22,11 @@ script = ExtResource("1_1yd7e")
 z_index = 1
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_c6lgs")
+
+[node name="mouseclick" type="Area2D" parent="."]
+
+[node name="SelfCollider2" type="CollisionShape2D" parent="mouseclick"]
+shape = SubResource("CircleShape2D_y05yv")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -44,8 +51,16 @@ text = "task name"
 [node name="SelfCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_y05yv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="TextEdit" parent="Node2D" instance=ExtResource("3_4youe")]
+visible = false
+z_index = 255
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = 27.0
+offset_top = -536.0
+offset_right = 1947.0
+offset_bottom = 544.0
+
+[connection signal="input_event" from="mouseclick" to="." method="_on_area_2d_input_event"]
+[connection signal="Submit" from="Node2D/TextEdit" to="." method="_on_text_edit_submit"]

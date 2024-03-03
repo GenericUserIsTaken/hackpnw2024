@@ -31,6 +31,10 @@ var parentForce = Vector2(0,0)
 
 @onready var isReady = $Area2D
 
+@onready var textedit = $Node2D/TextEdit
+
+var description : String = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# temporary random names to help tell them apart
@@ -115,18 +119,15 @@ func _draw():
 	draw_line(Vector2(0,0), 2*velo, Color.BLUE, 4.0)
 	draw_line(Vector2(0,0), 0.5*accel, Color.GREEN, 4.0)
 
-
-func _on_area_2d_mouse_entered():
-	pass # Replace with function body.
-
-
-func _on_area_2d_mouse_exited():
-	pass # Replace with function body.
-
-
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			var mouse_position = event.position
-			print(mouse_position)
-			print(self)
+			textedit.visible = true
+
+
+func _on_text_edit_submit(newname, newdesc):
+	changeTaskName(newname)
+	description = newdesc
+	textedit.visible = false
+	

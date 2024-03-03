@@ -1,6 +1,7 @@
 extends Control
 signal NameChanged(newname : String)
 signal DescriptionChanged(newdesc : String)
+signal Submit(newname : String, newdesc : String)
 @onready var description = $AspectRatioContainer/Panel/MarginContainer2/Panel2/MarginContainer/DescriptionEdit
 @onready var nametxt = $AspectRatioContainer/Panel/MarginContainer/Panel/MarginContainer/NameEdit
 @export var desclimit = 10
@@ -50,3 +51,4 @@ func _on_name_edit_text_changed():
 func _on_button_button_down():
 	DescriptionChanged.emit(description.text)
 	NameChanged.emit(nametxt.text)
+	Submit.emit(nametxt.text,description.text)
