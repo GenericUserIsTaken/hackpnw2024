@@ -1,0 +1,489 @@
+[gd_scene load_steps=8 format=3 uid="uid://do1or6pm3x1mx"]
+
+[ext_resource type="Texture2D" uid="uid://03ew2vx5skd7" path="res://resources/hexagon.png" id="1_6dcc8"]
+[ext_resource type="Texture2D" uid="uid://yxylrcgc5nxe" path="res://resources/diamond.png" id="2_fav5s"]
+[ext_resource type="Texture2D" uid="uid://dvupbxn76v6gr" path="res://resources/cross.png" id="3_8xmbw"]
+[ext_resource type="Texture2D" uid="uid://chlbqdfquycp4" path="res://resources/checkmark.png" id="4_vyf0g"]
+[ext_resource type="Texture2D" uid="uid://ciay75nlswbxe" path="res://resources/square.png" id="5_6d8dl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_um1rf"]
+bg_color = Color(0.301961, 0.478431, 0.317647, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kenuu"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Shop" type="Control"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchor_left = 0.602083
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="MarginContainer" parent="Control2/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control2/HBoxContainer/Control"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control2/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control2/HBoxContainer/Control/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Shop"
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kenuu")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control2/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control2/HBoxContainer/Control/VBoxContainer/CenterContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "$100"
+
+[node name="Control2" type="Control" parent="Control2/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.052
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control2/HBoxContainer/Control2/Panel"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="HBoxContainer" type="Control" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer/AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer/AspectRatioContainer/Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_6dcc8")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189091
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "PURCAHSE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control3" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="HBoxContainer" type="Control" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer/MarginContainer/AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer/MarginContainer/AspectRatioContainer/Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_fav5s")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189091
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control3/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "PURCAHSE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control4" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="HBoxContainer" type="Control" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer/MarginContainer/AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer/MarginContainer/AspectRatioContainer/Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_8xmbw")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189091
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control4/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "PURCAHSE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control5" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="HBoxContainer" type="Control" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer/MarginContainer/AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer/MarginContainer/AspectRatioContainer/Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_vyf0g")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189091
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control5/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "PURCAHSE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control6" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="HBoxContainer" type="Control" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer/MarginContainer/AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer/MarginContainer/AspectRatioContainer/Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_6d8dl")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189091
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control6/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "PURCAHSE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control7" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_um1rf")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "PURCAHSE"
+metadata/_edit_use_anchors_ = true
