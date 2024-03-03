@@ -1,22 +1,53 @@
-[gd_scene load_steps=2 format=3 uid="uid://do43qb54of037"]
+[gd_scene load_steps=3 format=3 uid="uid://do43qb54of037"]
 
 [ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task.tscn" id="1_22nn6"]
+[ext_resource type="Script" path="res://scenes/TASK/CameraManager.gd" id="2_osk6i"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Task" parent="." instance=ExtResource("1_22nn6")]
-position = Vector2(149, -209)
+[node name="anchor task 1 (0)" parent="." instance=ExtResource("1_22nn6")]
+position = Vector2(33, -98)
+maxDistanceForPush = 1000.0
 
-[node name="Task3" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
-position = Vector2(-26, -113)
-parentTask = NodePath("../Task2")
+[node name="subtask 1 (0-1)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(67, 35)
+parentTask = NodePath("../anchor task 1 (0)")
+maxDistanceForPush = 500.0
 
-[node name="Task4" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
-position = Vector2(-136, 20)
-parentTask = NodePath("../Task2")
+[node name="subtask 2 (1-1)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-63, -78)
+parentTask = NodePath("../subtask 1 (0-1)")
 
-[node name="Task2" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
-position = Vector2(203, -11)
-parentTask = NodePath("../Task")
+[node name="subtask 2 (1-2)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-25, 124)
+parentTask = NodePath("../subtask 1 (0-1)")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="subtask 2 (1-3)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-212, 26)
+parentTask = NodePath("../subtask 1 (0-1)")
+
+[node name="subtask 2 (1-4)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-179, -39)
+parentTask = NodePath("../subtask 1 (0-1)")
+
+[node name="subtask 1 (0-2)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(73, -33)
+parentTask = NodePath("../anchor task 1 (0)")
+maxDistanceForPush = 500.0
+
+[node name="subtask 2 (2-1)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-80, -15)
+parentTask = NodePath("../subtask 1 (0-2)")
+
+[node name="subtask 2 (2-2)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-140, 77)
+parentTask = NodePath("../subtask 1 (0-2)")
+
+[node name="subtask 2 (2-3)" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-61, 44)
+parentTask = NodePath("../subtask 1 (0-2)")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followerTarget")]
+position_smoothing_enabled = true
+script = ExtResource("2_osk6i")
+followerTarget = NodePath("../anchor task 1 (0)")
