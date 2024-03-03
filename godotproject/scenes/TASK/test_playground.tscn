@@ -7,13 +7,16 @@
 [node name="Task" parent="." instance=ExtResource("1_22nn6")]
 position = Vector2(149, -209)
 
-[node name="Task3" parent="." instance=ExtResource("1_22nn6")]
+[node name="Task3" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
 position = Vector2(-26, -113)
+parentTask = NodePath("../Task2")
 
-[node name="Task4" parent="." instance=ExtResource("1_22nn6")]
+[node name="Task4" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
 position = Vector2(-136, 20)
+parentTask = NodePath("../Task2")
 
-[node name="Task2" parent="." instance=ExtResource("1_22nn6")]
+[node name="Task2" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
 position = Vector2(203, -11)
+parentTask = NodePath("../Task")
 
 [node name="Camera2D" type="Camera2D" parent="."]
