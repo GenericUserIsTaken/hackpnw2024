@@ -114,3 +114,19 @@ func _draw():
 	# draw velo and accel debug
 	draw_line(Vector2(0,0), 2*velo, Color.BLUE, 4.0)
 	draw_line(Vector2(0,0), 0.5*accel, Color.GREEN, 4.0)
+
+
+func _on_area_2d_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_area_2d_mouse_exited():
+	pass # Replace with function body.
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == 1:
+			var mouse_position = event.position
+			print(mouse_position)
+			print(self)
