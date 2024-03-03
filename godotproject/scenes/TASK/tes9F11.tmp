@@ -5,15 +5,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Task" parent="." instance=ExtResource("1_22nn6")]
-position = Vector2(149, -209)
-
-[node name="Task3" parent="." instance=ExtResource("1_22nn6")]
-position = Vector2(-26, -113)
-
-[node name="Task4" parent="." instance=ExtResource("1_22nn6")]
-position = Vector2(-136, 20)
+position = Vector2(303, -356)
 
 [node name="Task2" parent="." instance=ExtResource("1_22nn6")]
-position = Vector2(203, -11)
+position = Vector2(-378, -294)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)

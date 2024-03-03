@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://oil23nrqorjg"]
+[gd_scene load_steps=6 format=3 uid="uid://oil23nrqorjg"]
 
 [ext_resource type="Script" path="res://scenes/TASK/task.gd" id="1_1yd7e"]
 [ext_resource type="Texture2D" uid="uid://cy68a3ddd8ymp" path="res://resources/square_rounded.png" id="1_c6lgs"]
 [ext_resource type="PackedScene" uid="uid://c5a1jh8gbd50t" path="res://scenes/TREE/TaskTracer.tscn" id="3_dhgkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rvya"]
-radius = 1835.42
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
 
 [node name="Task" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_1yd7e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_c6lgs")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -33,3 +36,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 90
 text = "task name"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y05yv")
