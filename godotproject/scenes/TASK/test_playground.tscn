@@ -23,177 +23,108 @@ script = ExtResource("4_m2345")
 
 [node name="Task" parent="tasks" instance=ExtResource("2_k8w77")]
 position = Vector2(-81, -343)
-taskname = "TextName"
 friction = 1000.0
-frictionCurve = 0.1
 taskSize = 1.5
 
 [node name="Task3" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
-taskSize = 1.0
 
 [node name="Task15" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task16" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task17" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task18" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task19" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task20" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task21" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task22" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task3")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task7" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
-taskSize = 1.0
 
 [node name="Task8" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-763, -242)
 parentTask = NodePath("../Task")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
-taskSize = 1.0
 
 [node name="Task2" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(742, -445)
 parentTask = NodePath("../Task")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
-taskSize = 1.0
 
 [node name="Task4" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(-521, 208)
 parentTask = NodePath("../Task2")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task5" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(4, 208)
 parentTask = NodePath("../Task2")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task6" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task2")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task9" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task2")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task10" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task2")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.5
 
 [node name="Task11" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task10")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.3
 
 [node name="Task12" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task10")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.3
 
 [node name="Task13" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task4")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.3
 
 [node name="Task14" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
 position = Vector2(237, 93)
 parentTask = NodePath("../Task4")
-taskname = "TextName"
-friction = 1.0
-frictionCurve = 0.1
 taskSize = 0.3
 
 [connection signal="changec" from="CanvasLayer/Shop" to="tasks" method="_on_shop_changec"]
