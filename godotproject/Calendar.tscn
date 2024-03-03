@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://hiv4tmlf7ca3"]
+[gd_scene load_steps=2 format=3 uid="uid://hiv4tmlf7ca3"]
+
+[ext_resource type="Texture2D" uid="uid://bg4p5jjjx4xma" path="res://resources/Screenshot 2024-03-02 160633.png" id="1_23eue"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -8,16 +10,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Month _ Year" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 444.0
-offset_top = -6.0
-offset_right = 2371.0
-offset_bottom = 308.0
-theme_override_font_sizes/normal_font_size = 150
-text = "March 2024"
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 944.0
+offset_top = -8.0
+offset_right = 2.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_23eue")
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
