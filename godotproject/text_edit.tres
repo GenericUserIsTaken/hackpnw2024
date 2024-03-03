@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ck015hvprl338"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sm4dq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqs0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7g7m8"]
+
+[resource]
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_sm4dq")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_sqs0u")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_7g7m8")

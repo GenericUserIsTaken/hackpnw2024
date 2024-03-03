@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsbc6nuwb8nj3"]
+
+[ext_resource type="FontFile" uid="uid://knpxcm6wvdvv" path="res://resources/Azonix.otf" id="1_r6eho"]
+
+[sub_resource type="Theme" id="Theme_bpnm2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.64
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+offset_right = 691.0
+offset_bottom = 1080.0
+color = Color(0.188235, 0.00784314, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.882234
+anchor_top = 0.188889
+anchor_right = 0.0986689
+anchor_bottom = 1.11667
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.284489
+color = Color(0.529412, 0.305882, 0.811765, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.951678
+anchor_top = 0.167593
+anchor_right = 0.0292245
+anchor_bottom = 1.09537
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.284489
+theme = SubResource("Theme_bpnm2")
+color = Color(0.772549, 0.145098, 0.490196, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextBounds" type="Control" parent="MarginContainer"]
+layout_mode = 1
+anchor_left = 0.184028
+anchor_top = 0.012963
+anchor_right = 1.7649
+anchor_bottom = 0.0787778
+offset_right = 0.304016
+offset_bottom = -0.0800781
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/TextBounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -25.0
+offset_right = 88.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.27409
+theme_override_colors/background_color = Color(0.188235, 0.00784314, 0.0823529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_r6eho")
+theme_override_font_sizes/font_size = 170
+placeholder_text = "epic text"
