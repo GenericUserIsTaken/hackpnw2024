@@ -11,12 +11,13 @@ radius = 500.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
 
-[node name="Task" type="RigidBody2D"]
+[node name="TaskNode" type="RigidBody2D"]
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_1yd7e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_c6lgs")
 
@@ -35,6 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
+z_index = 2
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
