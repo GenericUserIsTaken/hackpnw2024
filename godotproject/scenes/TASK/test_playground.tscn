@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://do43qb54of037"]
+[gd_scene load_steps=5 format=3 uid="uid://do43qb54of037"]
 
 [ext_resource type="PackedScene" uid="uid://bemfosvxxd6d8" path="res://scenes/TASK/task_node.tscn" id="2_k8w77"]
 [ext_resource type="Script" path="res://scenes/TASK/CameraManager.gd" id="2_osk6i"]
+[ext_resource type="PackedScene" uid="uid://do1or6pm3x1mx" path="res://shop.tscn" id="3_a1pef"]
+[ext_resource type="Script" path="res://scenes/TASK/CanvasLayer.gd" id="3_ptwnt"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -115,3 +117,8 @@ taskSize = 0.3
 position = Vector2(237, 93)
 parentTask = NodePath("../Task4")
 taskSize = 0.3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_ptwnt")
+
+[node name="Shop" parent="CanvasLayer" instance=ExtResource("3_a1pef")]

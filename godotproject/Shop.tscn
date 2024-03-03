@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://do1or6pm3x1mx"]
+[gd_scene load_steps=9 format=3 uid="uid://do1or6pm3x1mx"]
 
 [ext_resource type="Texture2D" uid="uid://03ew2vx5skd7" path="res://resources/hexagon.png" id="1_6dcc8"]
+[ext_resource type="Script" path="res://shop.gd" id="1_nv1xb"]
 [ext_resource type="Texture2D" uid="uid://yxylrcgc5nxe" path="res://resources/diamond.png" id="2_fav5s"]
 [ext_resource type="Texture2D" uid="uid://dvupbxn76v6gr" path="res://resources/cross.png" id="3_8xmbw"]
 [ext_resource type="Texture2D" uid="uid://chlbqdfquycp4" path="res://resources/checkmark.png" id="4_vyf0g"]
@@ -25,6 +26,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+mouse_filter = 1
+script = ExtResource("1_nv1xb")
 
 [node name="Control2" type="Control" parent="."]
 layout_direction = 2
@@ -34,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control2"]
 layout_mode = 1
@@ -487,3 +491,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "PURCAHSE"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer2/Button" to="." method="_on_button_button_down"]
