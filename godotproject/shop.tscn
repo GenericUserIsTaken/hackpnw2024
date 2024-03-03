@@ -486,10 +486,11 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer2"]
+[node name="colorbutton" type="Button" parent="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "PURCAHSE"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control2/HBoxContainer/MarginContainer2/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer2/colorbutton" to="." method="_on_colorbutton_button_down"]

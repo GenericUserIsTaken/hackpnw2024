@@ -30,8 +30,9 @@ var otherTasks
 var parentForce = Vector2(0,0)
 
 @onready var isReady = $Area2D
-
+@onready var replacetex = load("res://resources/hexagon.png")
 @onready var textedit = $Node2D/TextEdit
+@onready var mysprite = $Sprite2D
 
 var description : String = ""
 
@@ -131,3 +132,8 @@ func _on_text_edit_submit(newname, newdesc):
 	description = newdesc
 	textedit.visible = false
 	
+func changetexture():
+	mysprite.texture = replacetex
+	
+func changecolor(color):
+	mysprite.changecolor(color)
