@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://oil23nrqorjg"]
+
+[ext_resource type="Script" path="res://scenes/TASK/task.gd" id="1_1yd7e"]
+[ext_resource type="Texture2D" uid="uid://cy68a3ddd8ymp" path="res://resources/square_rounded.png" id="1_c6lgs"]
+[ext_resource type="PackedScene" uid="uid://c5a1jh8gbd50t" path="res://scenes/TREE/TaskTracer.tscn" id="3_dhgkg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rvya"]
+radius = 500.0
+
+[sub_resource type="SystemFont" id="SystemFont_bshqn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y05yv"]
+
+[node name="Task" type="RigidBody2D"]
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_1yd7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_c6lgs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="NearbyCollider" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3rvya")
+
+[node name="TaskTracer" parent="." instance=ExtResource("3_dhgkg")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("SystemFont_bshqn")
+text = "task name"
+
+[node name="SelfCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y05yv")
