@@ -5,10 +5,10 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followerTarget")]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followedNode")]
 position_smoothing_enabled = true
 script = ExtResource("2_osk6i")
-followerTarget = NodePath("../Task")
+followedNode = NodePath("../Task")
 
 [node name="Task" parent="." instance=ExtResource("2_k8w77")]
 position = Vector2(-81, -343)
