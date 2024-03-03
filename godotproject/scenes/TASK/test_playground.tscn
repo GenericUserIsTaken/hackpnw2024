@@ -1,18 +1,117 @@
 [gd_scene load_steps=3 format=3 uid="uid://do43qb54of037"]
 
-[ext_resource type="Script" path="res://scenes/TASK/task.gd" id="2_lmkmh"]
+[ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task_node.tscn" id="2_k8w77"]
 [ext_resource type="Script" path="res://scenes/TASK/CameraManager.gd" id="2_osk6i"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followerTarget")]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followedNode")]
 position_smoothing_enabled = true
 script = ExtResource("2_osk6i")
-followerTarget = NodePath("")
+followedNode = NodePath("../Task")
 
-[node name="Task" type="RigidBody2D" parent="."]
-script = ExtResource("2_lmkmh")
+[node name="Task" parent="." instance=ExtResource("2_k8w77")]
+position = Vector2(-81, -343)
+friction = 1000.0
+taskSize = 1.5
 
-[node name="Task2" type="RigidBody2D" parent="." node_paths=PackedStringArray("parentTask")]
-script = ExtResource("2_lmkmh")
+[node name="Task3" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
 parentTask = NodePath("../Task")
+
+[node name="Task15" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task16" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task17" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task18" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task19" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task20" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task21" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task22" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task3")
+taskSize = 0.5
+
+[node name="Task7" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task")
+
+[node name="Task8" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-763, -242)
+parentTask = NodePath("../Task")
+
+[node name="Task2" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(742, -445)
+parentTask = NodePath("../Task")
+
+[node name="Task4" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(-521, 208)
+parentTask = NodePath("../Task2")
+taskSize = 0.5
+
+[node name="Task5" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(4, 208)
+parentTask = NodePath("../Task2")
+taskSize = 0.5
+
+[node name="Task6" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task2")
+taskSize = 0.5
+
+[node name="Task9" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task2")
+taskSize = 0.5
+
+[node name="Task10" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task2")
+taskSize = 0.5
+
+[node name="Task11" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task10")
+taskSize = 0.3
+
+[node name="Task12" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task10")
+taskSize = 0.3
+
+[node name="Task13" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task4")
+taskSize = 0.3
+
+[node name="Task14" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
+position = Vector2(237, 93)
+parentTask = NodePath("../Task4")
+taskSize = 0.3
