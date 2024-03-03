@@ -1,0 +1,207 @@
+[gd_scene load_steps=8 format=3 uid="uid://l3gt715yj5sj"]
+
+[ext_resource type="Theme" uid="uid://ck015hvprl338" path="res://text_edit.tres" id="1_oxxf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15qlc"]
+bg_color = Color(0.027451, 0.423529, 0.317647, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip0nk"]
+bg_color = Color(0.623529, 0.94902, 0.819608, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3o00j"]
+bg_color = Color(0.0588235, 0.615686, 0.419608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.443137)
+shadow_size = 35
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bcuw"]
+bg_color = Color(0.113725, 0.866667, 0.6, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.443137)
+shadow_size = 60
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_banyv"]
+bg_color = Color(0.623529, 0.94902, 0.819608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.443137)
+shadow_size = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrtnf"]
+bg_color = Color(0.792157, 0.792157, 0.792157, 0.584314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="TextEdit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 252.0
+offset_top = -84.0
+offset_right = 252.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.105
+anchor_right = 0.835
+anchor_bottom = 0.577
+offset_left = -791.04
+offset_top = -113.4
+offset_right = -791.2
+offset_bottom = -113.16
+ratio = 1.6
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_15qlc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel4" type="Panel" parent="AspectRatioContainer/Panel"]
+layout_mode = 0
+offset_top = -0.4
+offset_right = 53.0
+offset_bottom = 506.6
+theme_override_styles/panel = SubResource("StyleBoxFlat_ip0nk")
+
+[node name="Control" type="Control" parent="AspectRatioContainer/Panel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel3" type="Panel" parent="AspectRatioContainer/Panel/Control"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = 293.0
+offset_right = 204.0
+offset_bottom = 785.0
+rotation = -0.889284
+scale = Vector2(1.22918, 1.61573)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3o00j")
+
+[node name="Panel2" type="Panel" parent="AspectRatioContainer/Panel/Control"]
+layout_mode = 0
+offset_left = -183.0
+offset_top = 104.0
+offset_right = 157.0
+offset_bottom = 596.0
+rotation = -0.535379
+scale = Vector2(0.94113, 1.23323)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bcuw")
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer/Panel/Control"]
+layout_mode = 0
+offset_left = -244.0
+offset_top = 68.0
+offset_right = 96.0
+offset_bottom = 601.0
+rotation = -0.331619
+theme_override_styles/panel = SubResource("StyleBoxFlat_banyv")
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.3
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrtnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/Panel/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="NameEdit" type="TextEdit" parent="AspectRatioContainer/Panel/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_oxxf6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+placeholder_text = "TaskName"
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27451
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel2" type="Panel" parent="AspectRatioContainer/Panel/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrtnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/Panel/MarginContainer2/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DescriptionEdit" type="TextEdit" parent="AspectRatioContainer/Panel/MarginContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_oxxf6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+placeholder_text = "Description text"
