@@ -9,12 +9,19 @@ class_name Task
 # an extra multiplier on push to others
 @export var pushWeight: float = 1
 
-# should be <= collider radius
+# higher is more resistance
+@export var pushResistance: float = 0
+
+# is taken from the collider radius
 @export var maxDistanceForPush: float = 250
 
-@export var distanceToForceBaseMultiplier: float = 1
+@export var distanceToForceBaseMultiplier: float = 0.1
 
-@export var parentPullMultiplier: float = 0.7
+@export var parentPullMultiplier: float = 10
+
+@export var parentPushMultiplier: float = 20
+
+@export var friction: float = 30
 
 # tracks other tasks within push distance
 var otherTasks
@@ -26,6 +33,8 @@ func _ready():
 	# temporary random names to help tell them apart
 	var names = ["amogus","sussy","goduh",":3","nah","ayo wtf","uwu","top ten","task: pet maxwell"]
 	self.changeTaskName(names.pick_random())
+	
+	$Area2D/NearbyCollider.shape.radius = maxDistanceForPush
 
 func changeTaskName(newName : String):
 	$CenterContainer/Label.text = newName
@@ -39,23 +48,28 @@ func _physics_process(delta):
 	if (parentTask != null):
 		parentForce = calc_pull_to_parent()
 		self.apply_central_force(parentForce)
+	
 	queue_redraw()
 
 func calc_push_from(otherTask):
 	var diffVector = (self.global_position - otherTask.global_position)
-	diffVector = diffVector.normalized() * max(0, maxDistanceForPush - diffVector.length())
-	diffVector *= distanceToForceBaseMultiplier
+	diffVector = diffVector.normalized() * max(0, otherTask.get_parent().maxDistanceForPush - diffVector.length())
+	diffVector *= distanceToForceBaseMultiplier * (1 - pushResistance)
 	diffVector *= otherTask.get_parent().pushWeight
 	return diffVector
 
 func calc_pull_to_parent():
 	var diffVector = (parentTask.global_position - self.global_position)
-	diffVector *= parentPullMultiplier
-	diffVector *= distanceToForceBaseMultiplier
+	diffVector *= parentPullMultiplier * distanceToForceBaseMultiplier
 	diffVector *= parentTask.pushWeight
 	return diffVector
 
 func _draw():
+	# draw lines to parent
+	if parentTask != null:
+		draw_line(Vector2(0,0), self.to_local(parentTask.global_position), Color.BLACK, 10.0)
+		
+	# draw velo debug
 	for otherTask in otherTasks:
-		draw_line(Vector2(0,0), 4*calc_push_from(otherTask), Color.GREEN, 4.0)
-	draw_line(Vector2(0,0), 4*parentForce, Color.RED, 4.0)
+		draw_line(Vector2(0,0), calc_push_from(otherTask), Color.RED, 4.0)
+	draw_line(Vector2(0,0), parentForce, Color.GREEN, 4.0)

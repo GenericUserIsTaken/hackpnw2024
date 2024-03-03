@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://do43qb54of037"]
+
+[ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task.tscn" id="1_22nn6"]
+[ext_resource type="Script" path="res://scenes/TASK/CameraManager.gd" id="2_osk6i"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Task" parent="." instance=ExtResource("1_22nn6")]
+position = Vector2(149, -209)
+pushResistance = 0.9
+
+[node name="Task3" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-26, -113)
+parentTask = NodePath("../Task2")
+
+[node name="Task4" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(-136, 20)
+parentTask = NodePath("../Task2")
+
+[node name="Task2" parent="." node_paths=PackedStringArray("parentTask") instance=ExtResource("1_22nn6")]
+position = Vector2(203, -11)
+parentTask = NodePath("../Task")
+pushResistance = 0.5
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followerTarget")]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("2_osk6i")
+followerTarget = NodePath("../Task")
