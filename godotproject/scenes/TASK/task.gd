@@ -40,8 +40,9 @@ var description : String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# temporary random names to help tell them apart
-	var names = ["amogus","sussy","goduh",":3","nah","ayo wtf","uwu","top ten","task: pet maxwell"]
-	self.changeTaskName(names.pick_random())
+	#var names = [""amogus","sussy","goduh",":3","nah","ayo wtf","uwu","top ten","task: pet maxwell"ex"]
+	#self.changeTaskName(names.pick_random())
+	self.changeTaskName("Task")
 	
 	# change push ranges based on task size
 	allPushRange *= taskSize
@@ -86,31 +87,6 @@ func _integrate_forces(state : PhysicsDirectBodyState2D):
 		state.set_linear_velocity(velo)
 		queue_redraw()
 
-"""
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	otherTasks = $Area2D.get_overlapping_areas()
-	for otherTask in otherTasks:
-		self.apply_central_force(calc_push_from(otherTask))
-	if (parentTask != null):
-		parentForce = calc_pull_to_parent()
-		self.apply_central_force(parentForce)
-	
-	queue_redraw()
-
-func calc_push_from(otherTask):
-	var diffVector = (self.global_position - otherTask.global_position)
-	diffVector = diffVector.normalized() * max(0, otherTask.get_parent().maxDistanceForPush - diffVector.length())
-	diffVector *= distanceToForceBaseMultiplier * (1 - pushResistance)
-	diffVector *= otherTask.get_parent().pushWeight
-	return diffVector
-
-func calc_pull_to_parent():
-	var diffVector = (parentTask.global_position - self.global_position)
-	diffVector *= parentPullMultiplier * distanceToForceBaseMultiplier
-	diffVector *= parentTask.pushWeight
-	return diffVector
-"""
 
 func _draw():
 	# draw lines to parent
@@ -118,8 +94,8 @@ func _draw():
 		draw_line(Vector2(0,0), self.to_local(parentTask.global_position), Color.BLACK, 10.0)
 		
 	# draw velo and accel debug
-	draw_line(Vector2(0,0), 2*velo, Color.BLUE, 4.0)
-	draw_line(Vector2(0,0), 0.5*accel, Color.GREEN, 4.0)
+	#draw_line(Vector2(0,0), 2*velo, Color.BLUE, 4.0)
+	#draw_line(Vector2(0,0), 0.5*accel, Color.GREEN, 4.0)
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:

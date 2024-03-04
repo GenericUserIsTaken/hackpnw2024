@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://do43qb54of037"]
 
-[ext_resource type="PackedScene" uid="uid://bemfosvxxd6d8" path="res://scenes/TASK/task_node.tscn" id="2_k8w77"]
+[ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task_node.tscn" id="2_k8w77"]
 [ext_resource type="Script" path="res://scenes/TASK/CameraManager.gd" id="2_osk6i"]
-[ext_resource type="PackedScene" uid="uid://do1or6pm3x1mx" path="res://shop.tscn" id="3_a1pef"]
+[ext_resource type="PackedScene" path="res://shop.tscn" id="3_a1pef"]
 [ext_resource type="Script" path="res://scenes/TASK/CanvasLayer.gd" id="3_ptwnt"]
 [ext_resource type="Script" path="res://scenes/TASK/tasks.gd" id="4_m2345"]
 
@@ -127,5 +127,4 @@ position = Vector2(237, 93)
 parentTask = NodePath("../Task4")
 taskSize = 0.3
 
-[connection signal="changec" from="CanvasLayer/Shop" to="tasks" method="_on_shop_changec"]
 [connection signal="doit" from="CanvasLayer/Shop" to="tasks" method="_on_shop_doit"]
