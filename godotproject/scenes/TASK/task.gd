@@ -33,6 +33,7 @@ var parentForce = Vector2(0,0)
 @onready var replacetex = load("res://resources/hexagon.png")
 @onready var textedit = $Node2D/TextEdit
 @onready var mysprite = $Sprite2D
+@onready var mylabel = $CenterContainer/Label
 
 var description : String = ""
 
@@ -101,7 +102,9 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if event.button_index == 1:
 			var mouse_position = event.position
 			textedit.visible = true
-
+		if event.button_index == 2:
+			mylabel.changecolor(Color.YELLOW)
+			mysprite.changecolor(Color.YELLOW)
 
 func _on_text_edit_submit(newname, newdesc):
 	changeTaskName(newname)
