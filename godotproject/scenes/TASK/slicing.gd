@@ -8,7 +8,7 @@ var exitPos = null
 
 var deleteMode = false
 
-var newTaskNode = preload("res://scenes/TASK/task_node1.tscn")
+var newTaskNode = preload("res://scenes/TASK/task_node.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
