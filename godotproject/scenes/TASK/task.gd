@@ -15,8 +15,8 @@ var accel = Vector2()
 @export var taskSize: float = 1
 
 # motion ranges and multipliers
-var allPushRange = 500
-var allPushMultiplier = 6
+var allPushRange = 250
+var allPushMultiplier = 12
 
 var parentPushRange = 250
 var parentPushMultiplier = 4
@@ -61,7 +61,6 @@ func _integrate_forces(state : PhysicsDirectBodyState2D):
 	if isReady:
 		# get all the overlapping areas
 		otherTasks = $Area2D.get_overlapping_areas()
-		
 		# calculate incoming acceleration
 		# push from all:
 		accel = Vector2()
@@ -75,9 +74,8 @@ func _integrate_forces(state : PhysicsDirectBodyState2D):
 			accel -= diffVector * parentPullMultiplier
 			# push from parent:
 			accel += diffVector.normalized() * max(0, parentTask.parentPushRange - diffVector.length()) * parentPushMultiplier
-		
 		# calculate next velocity using acceleration
-		velo += 0.01 * accel
+		velo += 0.01 * accel 
 		if velo.length() <= friction:
 			velo = Vector2()
 		else:

@@ -1,8 +1,7 @@
 extends Control
 signal doit()
 signal changec(color)
-
-@onready var colorguy = $Control2/HBoxContainer/Control2/Panel/VBoxContainer/Control7/HBoxContainer/MarginContainer/AspectRatioContainer/ColorPicker
+@onready var colorguy = %ColorPicker
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

@@ -11,7 +11,7 @@
 radius = 31.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rvya"]
-radius = 500.0
+radius = 250.0
 
 [sub_resource type="SystemFont" id="SystemFont_bshqn"]
 subpixel_positioning = 0

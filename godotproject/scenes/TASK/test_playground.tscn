@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://do43qb54of037"]
+[gd_scene load_steps=9 format=3 uid="uid://do43qb54of037"]
 
-[ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task_node1.tscn" id="2_k8w77"]
+[ext_resource type="PackedScene" uid="uid://oil23nrqorjg" path="res://scenes/TASK/task_node.tscn" id="2_k8w77"]
 [ext_resource type="Script" path="res://scenes/TASK/CameraManager.gd" id="2_osk6i"]
 [ext_resource type="PackedScene" uid="uid://do1or6pm3x1mx" path="res://shop.tscn" id="3_a1pef"]
 [ext_resource type="Script" path="res://scenes/TASK/CanvasLayer.gd" id="3_ptwnt"]
 [ext_resource type="Script" path="res://scenes/TASK/tasks.gd" id="4_m2345"]
+[ext_resource type="Script" path="res://scenes/TASK/Line2D.gd" id="6_87k3f"]
+
+[sub_resource type="Curve" id="Curve_erqek"]
+_data = [Vector2(0, 0.307692), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_beqhr"]
+colors = PackedColorArray(1, 1, 1, 0.396078, 1, 1, 1, 1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,6 +25,12 @@ followedNode = NodePath("../tasks/Task")
 script = ExtResource("3_ptwnt")
 
 [node name="Shop" parent="CanvasLayer" instance=ExtResource("3_a1pef")]
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer"]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width_curve = SubResource("Curve_erqek")
+gradient = SubResource("Gradient_beqhr")
+script = ExtResource("6_87k3f")
 
 [node name="tasks" type="Node2D" parent="."]
 script = ExtResource("4_m2345")
@@ -98,32 +112,32 @@ parentTask = NodePath("../Task2")
 taskSize = 0.5
 
 [node name="Task9" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
-position = Vector2(237, 93)
+position = Vector2(239, 167)
 parentTask = NodePath("../Task2")
 taskSize = 0.5
 
 [node name="Task10" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
-position = Vector2(237, 93)
+position = Vector2(532, 187)
 parentTask = NodePath("../Task2")
 taskSize = 0.5
 
 [node name="Task11" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
-position = Vector2(237, 93)
+position = Vector2(451, 436)
 parentTask = NodePath("../Task10")
 taskSize = 0.3
 
 [node name="Task12" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
-position = Vector2(237, 93)
+position = Vector2(619, 34)
 parentTask = NodePath("../Task10")
 taskSize = 0.3
 
 [node name="Task13" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
-position = Vector2(237, 93)
+position = Vector2(7, 426)
 parentTask = NodePath("../Task4")
 taskSize = 0.3
 
 [node name="Task14" parent="tasks" node_paths=PackedStringArray("parentTask") instance=ExtResource("2_k8w77")]
-position = Vector2(237, 93)
+position = Vector2(267, -199)
 parentTask = NodePath("../Task4")
 taskSize = 0.3
 
